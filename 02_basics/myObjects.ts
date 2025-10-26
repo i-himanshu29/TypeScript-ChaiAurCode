@@ -18,7 +18,7 @@ function createCourse():{name:string,price:number}{
 }
 
 
-// type -------------------------------------
+// type Aliases-------------------------------------
 type User = {
     name:string;
     email:string;

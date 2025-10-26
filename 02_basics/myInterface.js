@@ -1,4 +1,9 @@
-var hitesh = { dbId: 22, email: "h@h.com", userId: 2211,
+var himanshu = {
+    dbId: 22,
+    email: "h@h.com",
+    userId: 2211,
+    role: "admin",
+    githubToken: "github",
     startTrail: function () {
         return "trail started";
     },
@@ -6,5 +11,5 @@ var hitesh = { dbId: 22, email: "h@h.com", userId: 2211,
         return 10;
     }
 };
-hitesh.email = " h@hc.com";
-// hitesh.dbId =33
+himanshu.email = " h@hc.com";
+// himanshu.dbId =33

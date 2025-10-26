@@ -1,15 +1,16 @@
-// const user:(string | number)[] = [1,"hc"]
-let tUser :[string,number,boolean]
+// const user:(string | number)[] = [1,"him"]
+let tUser: [string, number, boolean]
+tUser = ["him", 131, true]
+// tUser = [true,1223,"him"] // Error
 
-tUser = ["hc",131,true]
-// tUser = [true,1223,"fg"]
 
-let rgb:[number,number,number] = [255,123,112]
+let rgb: [number, number, number] = [255, 123, 112]
 
-type User = [number , string]
+type User = [number, string]
 
 const newUser: User = [112, "example@gmail.com"]
-newUser[1] = "hc.com"
-newUser.push(true)
+newUser[1] = "him.com"
 
-export {}
+// newUser.push(true)
+
+export { }
