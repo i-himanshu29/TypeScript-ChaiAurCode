@@ -50,6 +50,7 @@ function isAdminAccount(account: User | Admin) {
 
 
 // new Date() , new Array()
+// instanceof 
 function logValue(x: Date | string) {
   if (x instanceof Date) { // instanceof check the this object is intance of some class or something like that 
     console.log(x.toUTCString());
@@ -58,16 +59,17 @@ function logValue(x: Date | string) {
   }
 }
 
-
-
-
+// type Predicates -------------------------
+// user-defined type guards
 type Fish = { swim: () => void };
 type Bird = { fly: () => void };
 
+// type predicate function
 function isFish(pet: Fish | Bird): pet is Fish { // 
   return (pet as Fish).swim !== undefined;
 }
 
+// usage of type predicates
 function getFood(pet: Fish | Bird) {
   if (isFish(pet)) {
     pet
@@ -78,6 +80,7 @@ function getFood(pet: Fish | Bird) {
   }
 }
 
+// Discriminated Unions -------------------------
 interface Circle {
   kind: "circle",
   radius: number
@@ -95,10 +98,8 @@ interface Rectangle {
 }
 
 //------------------
-// type guard
-
+// union type
 type Shape = Circle | Square | Rectangle
-
 
 function getTrueShape(shape: Shape) {
   if (shape.kind === "circle") {
