@@ -6,7 +6,7 @@ let response: any = "42";
 let numericResponse: number = (response as string).length;
 
 type Book = {
-    name:string
+    name: string
 }
 
 let bookString = '{"name":"Who Moved My Cheese?"}';
@@ -14,20 +14,20 @@ let bookString = '{"name":"Who Moved My Cheese?"}';
 let bookObject = JSON.parse(bookString) as Book;
 console.log(bookObject.name);
 
-const inputElement = document.getElementById("name") as HTMLInputElement;
+const inputElement = document.getElementById("name") as HTMLInputElement; // HTMLInputElement type assertion
 
-let value:any
+let value: any
 value = "chai"
-value = [1,2,3]
+value = [1, 2, 3]
 value = 2.5
-value.toUpperCase()
+value.toUpperCase() // No error at compile time
 
-let newValue:unknown
+let newValue: unknown
 newValue = "chai"
-newValue = [1,2,3]
+newValue = [1, 2, 3]
 newValue = 2.5
 // newValue.toUpperCase() // Error: Object is of type 'unknown'.
-if(typeof newValue === "string"){
+if (typeof newValue === "string") {
     newValue.toUpperCase()
 }
 
@@ -37,60 +37,63 @@ if(typeof newValue === "string"){
 //     console.log(error.message)
 // }
 
-try{
+try {
 
-}catch(error){
-    if(error instanceof Error){
+} catch (error) {
+    if (error instanceof Error) {
         console.log(error.message)
     }
     console.log("Unknown error", error)
 }
 
-const data:unknown = "Chai aur Code"
+const data: unknown = "Chai aur Code"
 const strData: string = data as string
 
 // never: function that never returns a value
+// a function that always throws an error or has an infinite loop
+// never type represents values that never occur
 
 type Role = "admin" | "user" | "guest"
 
-function redirectBasedOnRole(role:Role):void{
-    if(role === "admin"){
+function redirectBasedOnRole(role: Role): void {
+    if (role === "admin") {
         console.log("Redirect to admin dashboard")
-        return 
-    }  
-    if(role === "user"){
-        console.log("Redirect to user homepage")
-        return 
+        return
     }
-    if(role === "guest"){
+    if (role === "user") {
+        console.log("Redirect to user homepage")
+        return
+    }
+    if (role === "guest") {
         console.log("Redirect to guest welcome page")
-        return 
+        return
     }
     // role; // should be of type 'never' here
 }
 
 // ..................................
 
+
 type newRole = "admin" | "user" | "guest" | "superadmin"
 
-function redirectBasedOnNewRole(role:newRole):void{
-    if(role === "admin"){
+function redirectBasedOnNewRole(role: newRole): void {
+    if (role === "admin") {
         console.log("Redirect to admin dashboard")
-        return 
-    }  
-    if(role === "user"){
-        console.log("Redirect to user homepage")
-        return 
+        return
     }
-    if(role === "guest"){
+    if (role === "user") {
+        console.log("Redirect to user homepage")
+        return
+    }
+    if (role === "guest") {
         console.log("Redirect to guest welcome page")
-        return 
+        return
     }
     role;
 }
 
-function neverReturningFunction():never{
-    while(true){
+function neverReturningFunction(): never {
+    while (true) {
         console.log("This function never returns")
     }
 }
