@@ -1,3 +1,6 @@
+// Interface : used to define the structure of an object
+// it is similar to type alias but with some differences
+// like can be extended and merged
 
 // function makeChai(order: { type: string; sugar: number; strong: boolean }) {
 //     console.log(order);
@@ -7,6 +10,9 @@
 //     console.log(`Serving ${order.type} chai with ${order.sugar} spoons of sugar. Strong: ${order.strong}`);
 // }
 
+
+
+// Using type alias to define the structure of an object
 type ChaiOrder = {
     type: string;
     sugar: number;
@@ -21,11 +27,15 @@ function serveChai(order: ChaiOrder) {
     console.log(order);
 }
 
+
+
+
 // type TeaRecipe = {
 //     water: number;
 //     milk: number;
 // }
 
+// class hai..
 // class MasalaChai implements TeaRecipe {
 //     water = 100;
 //     milk = 50;
@@ -36,6 +46,9 @@ function serveChai(order: ChaiOrder) {
 // class Chai implements CupSize { // Error: A class can only implement an object type or intersection of object types with statically known members.
 
 // }
+
+
+
 
 // interface : used to define the structure of an object
 
@@ -48,12 +61,14 @@ class MasalaChai implements TeaRecipe {
     milk = 50;
 }
 interface CupSize {
-    size: "small" | "medium" | "large";
+    size: "small" | "medium" | "large"; // property with union type 
 }
 
 class Chai implements CupSize {
     size: "small" | "medium" | "large" = "medium";
 }
+
+
 
 // type Response = {ok:true} | {ok:false}
 // class myRes implements Response { // Error: A class can only implement an object type or intersection of object types with statically known members.
@@ -90,7 +105,7 @@ type Config = {
     version: string;
 }
 
-const cfg: Config = {
+const cfg: Config = { // readonly property
     appName: "ChaiApp",
     version: "1.0.0"
 }
