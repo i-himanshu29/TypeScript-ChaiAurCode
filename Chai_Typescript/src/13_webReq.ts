@@ -1,3 +1,5 @@
+// axios : promise based HTTP client for the browser and node.js
+
 // import axios from "axios"
 
 // axios.get("https://jsonplaceholder.typicode.com/posts/1")
@@ -15,6 +17,9 @@
 // //     "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
 // //     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
 // //   }
+
+// Inteface me jo bhi request se data aayega ya bhejenge uske structure ko define karne ke liye use karte hai.
+
 
 // //step-2..................
 // import axios from "axios"
@@ -40,7 +45,7 @@
 //step-3.........axios fetch req.........
 
 import axios from "axios"
-import type {AxiosResponse} from "axios"
+import type { AxiosResponse } from "axios"
 
 interface Todo {
     userId: number;
